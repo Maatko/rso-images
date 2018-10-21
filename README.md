@@ -36,8 +36,9 @@ MVN:
 		-DinteractiveMode = false
 	
 DOCKER:
-	docker run -d --name pg-orders -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image -p 5433:5432 postgres:10.5
-	docker rm -v pg-orders
+
+	docker run -d --name pg-images -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image -p 5433:5432 postgres:10.5
+	docker rm -v pg-images # after every run
 		
 	docker run hello-world # creates and runs docker container from hello-world image
 	
