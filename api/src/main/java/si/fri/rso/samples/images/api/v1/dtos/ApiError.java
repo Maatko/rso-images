@@ -1,4 +1,4 @@
-package si.fri.rso.samples.orders.api.v1.dtos;
+package si.fri.rso.samples.images.api.v1.dtos;
 
 public class ApiError {
 
