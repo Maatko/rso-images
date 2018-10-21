@@ -14,7 +14,7 @@ cache:
   - $HOME/.m2
 
 env:
-  - DOCKER_IMAGE=jmezna/rso-images:0.3
+  - DOCKER_IMAGE=rso-images:0.1
 
 script:
   - mvn clean package -U

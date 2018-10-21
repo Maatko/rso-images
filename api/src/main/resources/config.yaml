@@ -8,7 +8,7 @@ kumuluzee:
     http:
       port: 8081
   datasources:
-    - jndi-name: jdbc/OrdersDS
+    - jndi-name: jdbc/ImagesDS
       connection-url: jdbc:postgresql://localhost:5433/order
       username: dbuser
       password: postgres
