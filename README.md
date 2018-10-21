@@ -1,13 +1,16 @@
 RSO:
 ----
 TODO:
+	
 	https://github.com/kumuluz/kumuluzee-samples/tree/master/tutorial-microservice-config-discovery-faulttolerance-logs-metrics-security
 	
 PROJECT:
+
 	IntelliJ configuration:
 		Main class: EeApplication -> com.kumuluz.ee.EeApplication
 		Working directory: <project name>
-		
+		Classpath module <project-name>-api
+	
 	api dir:
 		<entity>Application.java - defines application path (version /v1)
 		<entity>Resource.java - REST CRUD operations, [@Path, @GET], (business logic calls + responses)
@@ -20,6 +23,7 @@ PROJECT:
 		
 
 MVN:
+	
 	mvn clean package -> builds all modules, creates jar -> \api\target\	
 	
 	mvn package - prevajanje in pakiranje
@@ -54,9 +58,11 @@ DOCKER:
 		datasource connection url = localhost
 		
 POSTMAN:
+	 
 	 http://localhost:<exposed port number>/<version>/<endpoint>
 	
 JAVAEE:
+	
 	JAX-RS - Java API REST Services
 		@Path, @GET, @POST
 	JTA - Java Transaction API
