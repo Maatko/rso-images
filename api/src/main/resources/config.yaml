@@ -1,5 +1,5 @@
 kumuluzee:
-  name: rso-orders
+  name: rso-images
   env:
     name: dev
   version: 1.0.0

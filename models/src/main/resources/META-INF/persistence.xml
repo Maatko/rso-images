@@ -3,8 +3,8 @@
     <persistence-unit name="images-jpa" transaction-type="RESOURCE_LOCAL">
         <non-jta-data-source>jdbc/OrdersDS</non-jta-data-source>
 
-        <class>si.fri.rso.samples.orders.entities.Image</class>
-        <class>si.fri.rso.samples.orders.converters.InstantAtributeConverter</class>
+        <class>si.fri.rso.samples.images.entities.Image</class>
+        <class>si.fri.rso.samples.images.converters.InstantAtributeConverter</class>
 
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

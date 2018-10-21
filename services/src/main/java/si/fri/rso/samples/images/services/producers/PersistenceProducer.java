@@ -1,7 +1,6 @@
-package si.fri.rso.samples.orders.services.producers;
+package si.fri.rso.samples.images.services.producers;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;

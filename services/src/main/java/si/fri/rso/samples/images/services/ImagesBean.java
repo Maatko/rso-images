@@ -1,15 +1,14 @@
-package si.fri.rso.samples.orders.services;
+package si.fri.rso.samples.images.services;
 
 import com.kumuluz.ee.rest.beans.QueryParameters;
 import com.kumuluz.ee.rest.utils.JPAUtils;
-import si.fri.rso.samples.orders.entities.Image;
+import si.fri.rso.samples.images.entities.Image;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.UriInfo;
-import java.time.Instant;
 import java.util.List;
 import java.util.logging.Logger;
 

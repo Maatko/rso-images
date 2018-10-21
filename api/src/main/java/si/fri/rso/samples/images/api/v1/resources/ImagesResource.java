@@ -1,7 +1,7 @@
-package si.fri.rso.samples.orders.api.v1.resources;
+package si.fri.rso.samples.images.api.v1.resources;
 
-import si.fri.rso.samples.orders.entities.Image;
-import si.fri.rso.samples.orders.services.ImagesBean;
+import si.fri.rso.samples.images.entities.Image;
+import si.fri.rso.samples.images.services.ImagesBean;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

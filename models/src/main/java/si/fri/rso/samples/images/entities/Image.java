@@ -1,4 +1,4 @@
-package si.fri.rso.samples.orders.entities;
+package si.fri.rso.samples.images.entities;
 
 import javax.persistence.*;
 import java.time.Instant;

@@ -1,7 +1,7 @@
-package si.fri.rso.samples.orders.api.v1.mappers;
+package si.fri.rso.samples.images.api.v1.mappers;
 
 
-import si.fri.rso.samples.orders.api.v1.dtos.ApiError;
+import si.fri.rso.samples.images.api.v1.dtos.ApiError;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.NotFoundException;
