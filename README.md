@@ -1,8 +1,5 @@
 RSO:
 ----
-TODO:
-	
-	https://github.com/kumuluz/kumuluzee-samples/tree/master/tutorial-microservice-config-discovery-faulttolerance-logs-metrics-security
 	
 PROJECT:
 
@@ -72,8 +69,4 @@ JAVAEE:
 		persist(), find(), merge(), remove(), createQuery(), createNamedQuery()
 		
 	EJB - Entity Java Beans - business logic
-	Dependency Injection - zagotavlja, da so viri potrebni za izvajanje komponente na voljo
-		@Resource
-	
-	
-	
+	Dependency Injection - zagotavlja, da so viri potrebni za izvajanje komponente na voljo @Resource
