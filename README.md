@@ -1,5 +1,12 @@
 RSO:
 ----
+
+TODO:
+
+    mvn clean package
+	docker build -t rso-images .
+	docker run -d rso-images
+	docker rmi rso-images
 	
 PROJECT:
 
