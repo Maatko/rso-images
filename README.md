@@ -4,9 +4,9 @@ RSO:
 TODO:
 
     mvn clean package
-	docker build -t rso-images .
-	docker run -d rso-images
-	docker rmi rso-images
+	docker build -t rokzidarn/rso-images:0.1 .
+	docker push rokzidarn/rso-images:0.1
+	docker run -d rokzidarn/rso-images:0.1
 	
 PROJECT:
 
@@ -54,7 +54,7 @@ DOCKER:
 		FROM <docker image>  # osnovna slika nad katero gradimo
 		RUN mdkir <dir>  # zažene ukaz nad obstoječo sliko
 		WORKDIR <dir>  # nastavi delovni direktorij
-		ADD <image>  # kopira nove datoteke, direktorije v datotečni sistem vsebnika (generira .jar)
+		ADD <image>  # kopira nove datoteke, direktorije v datotečni sistem vsebnika, v sliko
 		EXPOSE <port number>  # na katerih portih posluša vsebnik
 		CMD <image>  # privzete nastavitve izvajajočega vsebnika
 		
@@ -77,3 +77,16 @@ JAVAEE:
 		
 	EJB - Entity Java Beans - business logic
 	Dependency Injection - zagotavlja, da so viri potrebni za izvajanje komponente na voljo @Resource
+	
+MICROSERVICES:
+
+    4 main services: image uploader (3 services: [caption, user, binary file (image) -> request -> S3 image service -> URL, caption, user -> DB], 
+        image catalog, image editing (delete current, reupload new image), image comments
+    2 support services: messaging service
+    
+TRAVIS:
+
+    1. mvn clean package
+    2. Dockerfile configuration
+    3. docker build -t rokzidarn/rso-images:0.1 .
+    4. docker push rokzidarn/rso-images:0.1
