@@ -90,3 +90,12 @@ TRAVIS:
     2. Dockerfile configuration
     3. docker build -t rokzidarn/rso-images:0.1 .
     4. docker push rokzidarn/rso-images:0.1
+    
+DOCKER HUB PUSHED IMAGE RUN:
+
+    docker network create rso  # creates network between DB and my service
+    docker run -d --name pg-images --network rso -e 
+        POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image -p 5433:5432 postgres:10.5
+    docker run -d --name rso-images --network rso -e 
+        KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://pg-images:5432/image -p 8081:8081 rokzidarn/rso-images:0.1
+        # config.yaml: localhost -> pg-images
