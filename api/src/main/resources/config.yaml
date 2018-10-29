@@ -9,7 +9,7 @@ kumuluzee:
       port: 8081
   datasources:
     - jndi-name: jdbc/ImagesDS
-      connection-url: jdbc:postgresql://localhost:5433/image
+      connection-url: jdbc:postgresql://localhost:5432/image
       username: dbuser
       password: postgres
       max-pool-size: 20

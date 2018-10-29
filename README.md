@@ -50,7 +50,7 @@ MVN:
 DOCKER:
 
     docker rm -v pg-images
-	docker run -d --name pg-images -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image -p 5433:5432 postgres:10.5	
+	docker run -d --name pg-images -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image -p 5432:5432 postgres:10.5	
 		
 	docker run hello-world # creates and runs docker container from hello-world image
 	
@@ -100,7 +100,7 @@ DOCKER CONFIG:
     
     docker network create rso  # creates network between DB and my service
     docker run -d --name pg-images --network rso -e 
-        POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image -p 5433:5432 postgres:10.5
+        POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image -p 5432:5432 postgres:10.5
     docker run -d --name rso-images --network rso -e 
         KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://pg-images:5432/image -p 8081:8081 rokzidarn/rso-images:0.1
         # environemnt variable from config.yaml structure
