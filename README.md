@@ -11,7 +11,6 @@ BASICS:
 	docker build -t rokzidarn/rso-images:0.1 .
 	docker push rokzidarn/rso-images:0.1
 	docker run -d rokzidarn/rso-images:0.1
-	docker run -d --name pg-images postgres:10.5	
 	
 PROJECT:
 
