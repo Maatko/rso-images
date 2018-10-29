@@ -3,6 +3,10 @@ RSO:
 
 TODO:
 
+    https://github.com/kumuluz/kumuluzee-discovery
+
+BASICS:
+
     mvn clean package
 	docker build -t rokzidarn/rso-images:0.1 .
 	docker push rokzidarn/rso-images:0.1
@@ -73,10 +77,8 @@ JAVAEE:
 		@RequiresNew
 	JPQL - Java + SQL
 	JPA - Java Persistence API (ORM)
-		persist(), find(), merge(), remove(), createQuery(), createNamedQuery()
-		
+		persist(), find(), merge(), remove(), createQuery(), createNamedQuery()		
 	EJB - Entity Java Beans - business logic
-	Dependency Injection - zagotavlja, da so viri potrebni za izvajanje komponente na voljo @Resource
 	
 MICROSERVICES:
 
@@ -91,11 +93,22 @@ TRAVIS:
     3. docker build -t rokzidarn/rso-images:0.1 .
     4. docker push rokzidarn/rso-images:0.1
     
-DOCKER HUB PUSHED IMAGE RUN:
+DOCKER CONFIG:
+
+    environment variables in docker: docker run -e ENVIRONMENT_VAR=value
+    docker-compose.yml
+    
+    service discovery etcd test: http://henszey.github.io/etcd-browser/
 
     docker network create rso  # creates network between DB and my service
     docker run -d --name pg-images --network rso -e 
         POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image -p 5433:5432 postgres:10.5
     docker run -d --name rso-images --network rso -e 
         KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://pg-images:5432/image -p 8081:8081 rokzidarn/rso-images:0.1
+        # environemnt variable from config.yaml structure
         # config.yaml: localhost -> pg-images
+        
+SERVICE DISCOVERY:
+    
+    service discovery etcd test: http://henszey.github.io/etcd-browser/
+    
