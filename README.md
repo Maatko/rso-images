@@ -11,6 +11,7 @@ BASICS:
 	docker build -t rokzidarn/rso-images:0.1 .
 	docker push rokzidarn/rso-images:0.1
 	docker run -d rokzidarn/rso-images:0.1
+	docker run -d --name pg-images postgres:10.5	
 	
 PROJECT:
 
@@ -98,8 +99,6 @@ DOCKER CONFIG:
     environment variables in docker: docker run -e ENVIRONMENT_VAR=value
     docker-compose.yml
     
-    service discovery etcd test: http://henszey.github.io/etcd-browser/
-
     docker network create rso  # creates network between DB and my service
     docker run -d --name pg-images --network rso -e 
         POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image -p 5433:5432 postgres:10.5
