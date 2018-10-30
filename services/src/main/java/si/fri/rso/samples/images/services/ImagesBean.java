@@ -3,6 +3,7 @@ package si.fri.rso.samples.images.services;
 import com.kumuluz.ee.rest.beans.QueryParameters;
 import com.kumuluz.ee.rest.utils.JPAUtils;
 import si.fri.rso.samples.images.entities.Image;
+import si.fri.rso.samples.images.services.configuration.AppProperties;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -20,6 +21,9 @@ public class ImagesBean {
     @Inject
     private EntityManager em;
 
+    @Inject
+    private AppProperties appProperties;
+
     public List<Image> getImages(UriInfo uriInfo) {
 
         QueryParameters queryParameters = QueryParameters.query(uriInfo.getRequestUri().getQuery())
@@ -32,13 +36,16 @@ public class ImagesBean {
 
     public Image getImage(Integer imageId) {
 
-        Image image = em.find(Image.class, imageId);
+        if (appProperties.isExternalServicesEnabled()){
+            Image image = em.find(Image.class, imageId);
 
-        if (image == null) {
-            throw new NotFoundException();
+            if (image == null) {
+                throw new NotFoundException();
+            }
+            return image;
         }
 
-        return image;
+        throw new NotFoundException();
     }
 
     public Image createImage(Image image) {

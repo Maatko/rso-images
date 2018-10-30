@@ -21,4 +21,4 @@ kumuluzee:
       hosts: http://localhost:2379
 app-properties:
   external-services:
-    enabled: false
+    enabled: true
