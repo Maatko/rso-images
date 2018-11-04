@@ -1,0 +1,55 @@
+package si.fri.rso.samples.images.entities;
+
+import javax.persistence.*;
+import java.time.Instant;
+
+@Entity(name = "Comment")
+@NamedQueries(value =
+        {
+                @NamedQuery(name = "Comment.getAll", query = "SELECT o FROM images o"),
+                @NamedQuery(name = "Comment.findById", query = "SELECT o FROM images o WHERE o.id = " + ":id")
+        })
+public class Comment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private Integer user_id;
+
+    private Integer image_id;
+
+    private String text;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getUserId() {
+        return user_id;
+    }
+
+    public void setUserId(Integer user_id) {
+        this.user_id = user_id;
+    }
+
+    public Integer getImageId() {
+        return image_id;
+    }
+
+    public void setImageId(Integer image_id) {
+        this.image_id = image_id;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String posted) {
+        this.text = text;
+    }
+}
