@@ -100,9 +100,7 @@ DOCKER CONFIG:
     docker run -d --name rso-images --network rso -e \
         KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://pg-images:5432/image -p 8081:8081 rokzidarn/rso-images:0.1
         # environemnt variable from config.yaml structure
-        # config.yaml: localhost -> pg-images
-        
-    
+        # config.yaml: localhost -> pg-images 
         
 SERVICE DISCOVERY:
     
