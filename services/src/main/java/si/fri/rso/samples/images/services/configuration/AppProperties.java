@@ -12,9 +12,11 @@ public class AppProperties {
     private boolean externalServicesEnabled;
 
     public boolean isExternalServicesEnabled() {
+
         return externalServicesEnabled;
     }
     public void setExternalServicesEnabled(boolean externalServicesEnabled) {
+
         this.externalServicesEnabled = externalServicesEnabled;
     }
 }
