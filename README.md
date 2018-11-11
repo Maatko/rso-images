@@ -10,7 +10,7 @@ DOCKER CONFIG:
     docker run -d --name pg-images --network rso -e \
         POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image -p 5432:5432 postgres:10.5
     docker run -d --name rso-images --network rso -e \
-        KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://pg-images:5432/image -p 8081:8081 rokzidarn/rso-images:0.1
+        KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://pg-images:5432/image -p 8081:8081 rokzidarn/rso-images:0.2
         # environemnt variable from config.yaml structure
         # config.yaml: localhost -> pg-images 
         

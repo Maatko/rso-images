@@ -40,7 +40,7 @@ public class ImagesBean {
     private Client httpClient;
 
     @Inject
-    @DiscoverService("rso-comments")
+    @DiscoverService("rso-comment")
     private Optional<String> baseUrl;
 
     @PostConstruct
