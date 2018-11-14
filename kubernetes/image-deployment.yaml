@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: image
+  template:
+    metadata:
+      labels:
+        app: image
+    spec:
+      containers:
+      - image: rokzidarn/rso-images:0.2
+        name: image
+        env:
+        - name: KUMULUZEE_DISCOVERY_CLUSTER
+          value: gcloud
+        - name: KUMULUZEE_DISCOVERY_ETCD_HOSTS
+          value: http://etcd:2379
+        - name: KUMULUZEE_CONFIG_ETCD_HOSTS
+          value: http://etcd:2379
+        - name: KUMULUZEE_SERVER_BASEURL
+          # kubernetes: change URL, example -> http://159.122.179.214:32682
+          value: http://169.51.13.134:32696
+        ports:
+        - containerPort: 8081
+          name: server
+          protocol: TCP
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: image
+spec:
+  type: NodePort
+  ports:
+  - port: 8081
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    app: image

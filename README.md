@@ -40,4 +40,19 @@ SERVICE DISCOVERY:
             environments/dev/services/rso-images/1.0.0/config/app-properties/external-services/enabled
             
     http://henszey.github.io/etcd-browser/
-        http://localhost:2379
+        http://localhost:2379       
+        
+KUBERNETES:
+
+    cubectl download -> add to PATH
+
+    1 Node->N Pods (1 service/pod)
+
+    DASHBOARD:
+        + Create -> create from text
+        Deployments
+        Pods
+        Replica Sets
+        Services
+    
+    IBM (only 1 node, use NodePort)

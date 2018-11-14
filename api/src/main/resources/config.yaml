@@ -9,7 +9,9 @@ kumuluzee:
       port: 8081
   datasources:
     - jndi-name: jdbc/ImagesDS
+      # kubernetes: change connection-url, example -> jdbc:postgresql://sl-eu-gb-p00.dblayer.com:15468/compose
       connection-url: jdbc:postgresql://localhost:5432/image
+      # kubernetes: comment username/password
       username: dbuser
       password: postgres
       max-pool-size: 20
