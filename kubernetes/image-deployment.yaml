@@ -25,6 +25,12 @@ spec:
         - name: KUMULUZEE_SERVER_BASEURL
           # kubernetes: change URL, example -> http://159.122.179.214:32682
           value: http://169.51.13.134:32696
+        - name: KUMULUZEE_DATASOURCES0_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: pg-pass
+              key: KUMULUZEE_DATASOURCES0_PASSWORD
+
         ports:
         - containerPort: 8081
           name: server
